@@ -9,17 +9,9 @@
     "types": ["webpack-env", "vite/client", "vuepress/client-types"]
   },
   "include": [
-      "plugins/**/*",
-      "theme/**/*",
-      "docs/**/*",
-      "scripts/**/*",
-      "src/**/*"
+      "docs"
   ],
   "exclude": [
-      "node_modules",
-      ".cache",
-      ".temp",
-      "lib",
-      "dist"
+      "node_modules"
   ]
 }
