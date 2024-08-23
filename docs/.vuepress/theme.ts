@@ -5,7 +5,7 @@ import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom';
 
 const __dirname = getDirname(import.meta.url);
 
-const faychTheme = {
+export const faychTheme = {
   return: {
     name: 'faych-theme',
 

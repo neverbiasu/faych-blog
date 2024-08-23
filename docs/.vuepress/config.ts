@@ -1,10 +1,7 @@
 import { webpackBundler } from '@vuepress/bundler-webpack';
 import { defineUserConfig } from 'vuepress';
 import { defaultTheme } from '@vuepress/theme-default';
-import {
-  SocialShareNetworkData,
-  socialSharePlugin
-} from 'vuepress-plugin-social-share';
+import { SocialShareNetworkData } from 'vuepress-plugin-social-share';
 
 const extendsNetworks: SocialShareNetworkData = {
   pinterest: {
@@ -33,8 +30,48 @@ const extendsNetworks: SocialShareNetworkData = {
 };
 
 export default defineUserConfig({
+  base: '/',
+  lang: 'en-US',
+  title: 'Faych Blog',
+  description: 'Faych Blog',
+  head: [['link', { rel: 'icon', href: './assets/wadorudy.jpg' }]],
   bundler: webpackBundler({
     postcss: {},
     vue: {}
-  })
+  }),
+  locales: {
+    '/': {
+      lang: 'en-US',
+      title: 'VuePress',
+      description: 'Vue-powered Static Site Generator',
+    },
+    '/zh/': {
+      lang: 'zh-CN',
+      title: 'VuePress',
+      description: 'Vue 驱动的静态网站生成器',
+    },
+  },
+  theme: defaultTheme({
+    hostname: 'localhost',
+    colorMode: 'auto',
+    colorModeSwitch: true,
+    navbar: [
+      {
+        text: 'Home',
+        link: '/',
+      },
+      {
+        text: 'Posts',
+        link: '/posts/',
+      },
+      {
+        text: 'Tags',
+        link: '/tags/',
+      },
+      {
+        text: 'About',
+        link: '/about/',
+      }
+    ],
+  }),
 });
